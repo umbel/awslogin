@@ -1,9 +1,9 @@
 ## awslogin
 This utility simplifies AWS MFA logons from the command line.
 
-This is the GoLang version. For the Python version go to https://github.com/lencap/awlogin. Writing it in two different languages was done to get more familiar with each language, but also with the respective AWS SDK.
+This is the GoLang version. For the Python version go to https://github.com/lencap/awlogin. Wrote it in two different languages to get more familiar with each language, and the respective AWS SDK.
 
-This utilility allows CLI MFA authentication to any AWS account profile defined in `~/.aws/credentials`, but it expects that file to be formatted using 3 additional variables (read more below). Below is a example of how the `~/.aws/credentials` file should be formatted:
+This utilility allows CLI MFA authentication to any AWS account profile defined in `~/.aws/credentials`, but it expects that file to be formatted using 3 additional variables (read more below). Below is an example of how the `~/.aws/credentials` file should be formatted:
 
 <pre><code>
 [default]
@@ -32,7 +32,7 @@ In short, the formatting means that:
   5. Each federated profile must have a valid **account_number** and **user_role**
   6. The `-c` switch can create a fresh skeleton `~/.aws/credentials` file
 
-**NOTE:** This utility introduces and uses three new special variables (profile_name, account_number, and user_role) without breaking any of the original AWS `~/.aws/credentials` file functionality. If you find that it does, please let me know.
+**NOTE:** This utility introduces and uses three new special variables (profile_name, account_number, and user_role) without breaking any of the original AWS `~/.aws/credentials` file functionality. If you find that this breaks something, please let me know.
 
 ## Installation
 Note that this has only been tested on macOS:
@@ -45,7 +45,7 @@ Note that this has only been tested on macOS:
 ## Usage
 To logon to one of your accounts run `awslogin stag TOKEN` where **stag** is one of the **profile_name** defined in your `~/.aws/credentials` file, and **TOKEN** is a 6-digit number from your MFA device. If the logon is successful, it will drop you into a **subshell** from where you can run **awscli** commands. To further verify you've logged on, you can run `env | grep AWS` to view the **AWS_SESSION_TOKEN** environment variable that were generated for this specific session.
 
-Once you're done with your work, you can exit this subshell to return to your original shell. **Note that you can run this utility in different shell windows, thus allowing you the capability to logon to multiple accounts at the same time.**
+Once you're done with your work, you can exit this subshell to return to your original shell. **This means you can run this utility in different shell windows, thus allowing logon to multiple AWS accounts at the same time.**
   
 ### Usage shell output
 <pre><code>
