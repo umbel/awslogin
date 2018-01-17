@@ -20,7 +20,7 @@ import (
 // Global constants
 const (
     ProgName = "awslogin"
-    ProgVer  = "1.5.1"
+    ProgVer  = "1.5.2"
 )
 
 // Global variables
@@ -29,13 +29,16 @@ var (
     whi = color.New(color.FgWhite, color.Bold).SprintFunc()
     red = color.New(color.FgRed, color.Bold).SprintFunc()
     skeletonConf = "[default]\n" +
-                   "profile_name          = stag\n" +
-                   "aws_access_key_id     = AKERNEIDUFENICUQ3NDO\n" +
+                   "aws_access_key_id = AKERNEIDUFENICUQ3NDO\n" +
                    "aws_secret_access_key = ilsjkasdUEwlwDUgvD1b7234Fn/lepi0ACmk8upFy\n\n" +
+                   "[stag]\n" +
+                   "profile_name = stag\n" +
+                   "account_number = 466692114123\n" +
+                   "user_role = PowerUser\n\n" +
                    "[prod]\n" +
-                   "profile_name   = prod\n" +
+                   "profile_name = prod\n" +
                    "account_number = 544492114123\n" +
-                   "user_role      = PowerUser\n"
+                   "user_role = PowerUser\n"
     progConfDir  = filepath.Join(os.Getenv("HOME"), "." + ProgName)
     awsConfFile  = filepath.Join(os.Getenv("HOME"), ".aws/config")
     awsCredsFile = filepath.Join(os.Getenv("HOME"), ".aws/credentials")
@@ -89,7 +92,7 @@ func printHelp() {
     fmt.Println("formatted in the following sample manner:\n")
     fmt.Println(skeletonConf)
     fmt.Println("So ...")
-    fmt.Println("1. The", gra("default"), "profile is for your primary AWS account, where your username is defined")
+    fmt.Println("1. The", gra("default"), "profile is for the AWS account, where your username is defined")
     fmt.Println("2. All other profiles are treated as", gra("federated"), "AWS accounts you may have access to")
     fmt.Println("3. You", gra("must"), "defined a valid key pair for your", gra("default"), "profile")
     fmt.Println("4. Each profile must have a unique", gra("profile_name"), "so this utility can identify it")
