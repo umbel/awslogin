@@ -41,7 +41,7 @@ The prefer installation method is with [Homebrew](https://brew.sh):
   
 Alternatively, you can compile and install manually:  
   1. Install GoLang (please find out how that's done somewhere else).
-  2. Run `make all` if compiling for the first time, or just `make` it's a subsequent compile. 
+  2. Run `make all` if compiling for the first time, or just `make` if it's a subsequent compile. 
   3. Install the resulting `awslogin` binary somewhere in your PATH.
 
 ## Usage
