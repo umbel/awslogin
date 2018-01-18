@@ -1,5 +1,5 @@
 ## awslogin
-A small utility to simplify AWS MFA logons from the command line. It allows MFA authentication to any main or federated AWS account profile defined in `~/.aws/credentials`. It expects entries in that file to be formatted with 3 additional variables that are not part of the Amazon specs (read more below). Hehe's an example of how that file should be formatted:
+A small **macOS** utility to simplify AWS MFA logons from the command line. It allows MFA authentication to any main or federated AWS account profile defined in `~/.aws/credentials`. It expects entries in that file to be formatted with 3 additional variables that are not part of the Amazon specs (read more below). Hehe's an example of how that file should be formatted:
 
 <pre><code>
 [default]
@@ -35,11 +35,13 @@ In short, the formatting means that:
 **NOTE:** This utility introduces and uses three new special variables (profile_name, account_number, and user_role) without breaking any of the original AWS `~/.aws/credentials` file functionality. If you find that this breaks something, please let me know.
 
 ## Installation
-Note that this has **only** been tested on macOS:
-  1. First, check to see if your team already has a compiled `awslogin` macOS binary that you can download from somewhere. Else, proceed to compile it yourself using below instructions.
-  2. Install GoLang (please find out how that's done somewhere else).
-  3. Run `make all` for the first time or just `make` for subsequent changes. 
-  4. Install the resulting `awslogin` binary somewhere in your PATH.
+The prefer installation method is with [Homebrew](https://brew.sh):
+  1. brew tap lencap/tools git@github.com:lencap/homebrew-tools
+  2. brew install lencap/tools/awslogin
+Alternatively, you can compile and install manually:  
+  1. Install GoLang (please find out how that's done somewhere else).
+  2. Run `make all` if compiling for the first time, or just `make` it's a subsequent compile. 
+  3. Install the resulting `awslogin` binary somewhere in your PATH.
 
 ## Usage
 To logon to one of your accounts run `awslogin stag TOKEN` where **stag** is one of the **profile_name** defined in your `~/.aws/credentials` file, and **TOKEN** is a 6-digit number from your MFA device. If the logon is successful, it will drop you into a **subshell** from where you can run **awscli** commands. To further verify you've logged on, you can run `env | grep AWS` to view the **AWS_SESSION_TOKEN** environment variable that were generated for this specific session.
