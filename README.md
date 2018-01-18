@@ -36,8 +36,9 @@ In short, the formatting means that:
 
 ## Installation
 The prefer installation method is with [Homebrew](https://brew.sh):
-  1. brew tap lencap/tools git@github.com:lencap/homebrew-tools
-  2. brew install lencap/tools/awslogin
+  1. `brew tap lencap/tools git@github.com:lencap/homebrew-tools`
+  2. `brew install lencap/tools/awslogin`
+  
 Alternatively, you can compile and install manually:  
   1. Install GoLang (please find out how that's done somewhere else).
   2. Run `make all` if compiling for the first time, or just `make` it's a subsequent compile. 
