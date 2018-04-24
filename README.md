@@ -36,8 +36,8 @@ In short, the formatting means that:
 
 ## Installation
 The prefer installation method is with [Homebrew](https://brew.sh):
-  1. `brew tap lencap/tools git@github.com:lencap/homebrew-tools`
-  2. `brew install lencap/tools/awslogin`
+  1. `brew untap lencap/tools && brew tap lencap/tools` to grab the latest formula
+  3. `brew install lencap/tools/awslogin`
   
 Alternatively, you can compile and install manually:  
   1. Install GoLang (please find out how that's done somewhere else).
@@ -48,7 +48,15 @@ Alternatively, you can compile and install manually:
 To logon to one of your accounts run `awslogin stag TOKEN` where **stag** is one of the **profile_name** defined in your `~/.aws/credentials` file, and **TOKEN** is a 6-digit number from your MFA device. If the logon is successful, it will drop you into a **subshell** from where you can run **awscli** commands. To further verify you've logged on, you can run `env | grep AWS` to view the **AWS_SESSION_TOKEN** environment variable that were generated for this specific session.
 
 Once you're done with your work, you can exit this subshell to return to your original shell. Note that **this means you can logon to multiple AWS accounts at the same time, using different shell windows**.
-  
+
+## Config file
+Don't forget you also need to populate your `~/.aws/config` file, which usually just contains:
+<pre><code>
+[default]
+region = us-east-1
+output = json
+</code></pre>
+
 ### Usage shell output
 <pre><code>
 $ awslogin
