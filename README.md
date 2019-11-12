@@ -38,9 +38,11 @@ In short, the formatting means that:
 **NOTE:** This utility introduces and uses three new special variables (profile_name, account_number, and user_role) without breaking any of the original AWS `~/.aws/credentials` file functionality. If you find that this breaks something, please let me know.
 
 ## Installation
-~~The prefer installation method is with [Homebrew](https://brew.sh):
-  1. `brew untap lencap/tools && brew tap lencap/tools` to grab the latest formula
-  3. `brew install lencap/tools/awslogin` or `brew upgrade lencap/tools/awslogin`~~
+~~The preferred installation method is with [Homebrew](https://brew.sh):~~
+  ~~1. `brew untap lencap/tools && brew tap lencap/tools` to grab the latest formula~~
+  ~~2. `brew install lencap/tools/awslogin` or `brew upgrade lencap/tools/awslogin`~~
+
+**NOTE:** Updated brew installation is TBD. Please follow below steps to compile and install manually.
 
 Alternatively, you can compile and install manually:
   1. Install GoLang (please find out how that's done somewhere else).
