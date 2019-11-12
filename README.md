@@ -7,7 +7,7 @@ profile_name = default
 username = cooluser
 account_number = 987654321010
 aws_access_key_id = ABCDEFGHIJKLMNOPQRST
-aws_secret_access_key = laisef8;aoweinfasldkjf1348\23bn2o38&a10jn
+aws_secret_access_key = laisef8/aoweinfasldkjf1348z23bn2o381a10jn
 
 [stag]
 profile_name = stag

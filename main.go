@@ -33,7 +33,7 @@ var (
                    "profile_name = default\n" +
                    "account_number = 987654321010\n" +
                    "aws_access_key_id = ABCDEFGHIJKLMNOPQRST\n" +
-                   "aws_secret_access_key = laisef8;aoweinfasldkjf1348\23bn2o38&a10jn\n\n" +
+                   "aws_secret_access_key = laisef8/aoweinfasldkjf1348z23bn2o381a10jn\n\n" +
                    "[stag]\n" +
                    "profile_name = stag\n" +
                    "account_number = 466692114123\n" +
@@ -175,8 +175,7 @@ func validateConfig(profile string) (cfg ini.File) {
     if profile != "default" &&
        (cfg[profile]["profile_name"] == "" ||
        cfg[profile]["account_number"] == "" ||
-       cfg[profile]["user_role"] == "")
-    {
+       cfg[profile]["user_role"] == "") {
         Die(1, "Profile name " + red(profile) + " is missing needed entries")
     }
     return cfg
