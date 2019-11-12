@@ -3,8 +3,11 @@ A small **macOS** utility to simplify AWS MFA logons from the command line. It a
 
 <pre><code>
 [default]
-aws_access_key_id = AKERNEIDUFENICUQ3NDO
-aws_secret_access_key = ilsjkasdUEwlwDUgvD1b7234Fn/lepi0ACmk8upFy
+profile_name = default
+username = cooluser
+account_number = 987654321010
+aws_access_key_id = ABCDEFGHIJKLMNOPQRST
+aws_secret_access_key = laisef8;aoweinfasldkjf1348\23bn2o38&a10jn
 
 [stag]
 profile_name = stag
@@ -35,13 +38,13 @@ In short, the formatting means that:
 **NOTE:** This utility introduces and uses three new special variables (profile_name, account_number, and user_role) without breaking any of the original AWS `~/.aws/credentials` file functionality. If you find that this breaks something, please let me know.
 
 ## Installation
-The prefer installation method is with [Homebrew](https://brew.sh):
+~~The prefer installation method is with [Homebrew](https://brew.sh):
   1. `brew untap lencap/tools && brew tap lencap/tools` to grab the latest formula
-  3. `brew install lencap/tools/awslogin` or `brew upgrade lencap/tools/awslogin`
-  
-Alternatively, you can compile and install manually:  
+  3. `brew install lencap/tools/awslogin` or `brew upgrade lencap/tools/awslogin`~~
+
+Alternatively, you can compile and install manually:
   1. Install GoLang (please find out how that's done somewhere else).
-  2. Run `make all` if compiling for the first time, or just `make` if it's a subsequent compile. 
+  2. Run `make all` if compiling for the first time, or just `make` if it's a subsequent compile.
   3. Install the resulting `awslogin` binary somewhere in your PATH.
 
 ## Usage
