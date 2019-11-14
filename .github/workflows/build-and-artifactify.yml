@@ -1,7 +1,5 @@
 name: Build awslogin
-on:
-  release:
-    types: [created]
+on: [push]
 jobs:
   build:
     name: Build
@@ -10,8 +8,13 @@ jobs:
     - uses: actions/checkout@v1
     - name: Compile
       run: make all
-    - name: Artifact-ify it
+    - name: mac awslogin artifact
       uses: actions/upload-artifact@v1
       with:
         name: awslogin
-        path: awslogin*
+        path: awslogin
+    - name: linux awslogin artifact
+      uses: actions/upload-artifact@v1
+      with:
+        name: awslogin-linux
+        path: awslogin-linux
